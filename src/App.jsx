@@ -1,13 +1,26 @@
-import "./App.css";
-import "./assets/css/main.css";
-import AppHeader from "./components/layout/AppHeader";
-import MainSection from "./components/body/MainSection";
+import Article from "./components/Article";
 
 function App() {
+    const firstArticle = `
+    hjvdhbdjhdhdhd
+    fhjdbdhd
+    jnjndejjndnc
+    `;
+    const secondArticle = `
+    hjvdhbdjhdhdhddjsj
+    fhjdbdhd
+    jnjndejjndnc
+    `;
+
     return (
         <div>
-            <AppHeader />
-            <MainSection />
+            <Article
+                name="Ahmed"
+                email="ahmed@gmail.com"
+                content={firstArticle}
+            />
+            <Article name="Ali" email="ali@gmail.com" content={secondArticle} />
+            <Article name="Sayed" email="sayed@gmail.com" />
         </div>
     );
 }
