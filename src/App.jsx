@@ -1,11 +1,13 @@
 import "./App.css";
-import MyFirstComponent from "./components/MyFirstComponent.jsx";
+import "./assets/css/main.css";
+import AppHeader from "./components/layout/AppHeader";
+import MainSection from "./components/body/MainSection";
 
 function App() {
     return (
         <div>
-            <h1>Hello World!</h1>
-            <MyFirstComponent />
+            <AppHeader />
+            <MainSection />
         </div>
     );
 }
