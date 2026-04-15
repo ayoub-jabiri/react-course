@@ -1,4 +1,4 @@
-export default function Article({ name, email, content = "No content" }) {
+export default function Article({ name, email, children }) {
     const styles = {
         boxShadow: "0 0 10px #ddd",
         width: "300px",
@@ -12,7 +12,7 @@ export default function Article({ name, email, content = "No content" }) {
                 <h1>{name}</h1>
                 <h2>{email}</h2>
                 <hr />
-                <p>{content}</p>
+                <p>{children}</p>
             </div>
         </>
     );
