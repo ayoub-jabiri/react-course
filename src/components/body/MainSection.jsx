@@ -1,6 +1,8 @@
 import PostBox from "./PostBox";
 import SideBar from "./side-bar/SideBar";
 
+const showCategory = true;
+
 export default function MainSection() {
     return (
         <main>
@@ -22,7 +24,15 @@ export default function MainSection() {
                     <p>This is the body of the post 3</p>
                 </PostBox>
             </section>
-            <SideBar />
+            <AppSideMenu />
         </main>
     );
+}
+
+function AppSideMenu() {
+    if (showCategory) {
+        return <SideBar />;
+    } else {
+        return null;
+    }
 }
