@@ -12,7 +12,7 @@ export default function Article({ name, email, children }) {
                 <h1>{name}</h1>
                 <h2>{email}</h2>
                 <hr />
-                <p>{children}</p>
+                <div>{children}</div>
             </div>
         </>
     );
