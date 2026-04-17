@@ -4,26 +4,28 @@ import SideBar from "./side-bar/SideBar";
 const showCategory = true;
 
 export default function MainSection() {
+    const articles = [
+        {
+            title: "Tarmeez Academy",
+            body: "This is an education academy",
+        },
+        {
+            title: "Hello World",
+            body: "This is hello world text",
+        },
+        {
+            title: "Post 3",
+            body: "This is the body of the post 3",
+        },
+    ];
+
+    const articlesList = articles.map((el, i) => (
+        <PostBox key={i} title={el.title} body={el.body} />
+    ));
+
     return (
         <main>
-            <section>
-                <PostBox>
-                    <h2 className="text-2xl">20</h2>
-                    <h3>Tarmeez Academy</h3>
-                    <hr className="my-2" />
-                    <p>This is an education academy</p>
-                </PostBox>
-                <PostBox>
-                    <h2 className="text-2xl">Hello World</h2>
-                    <hr className="my-2" />
-                    <p>This is hello world text</p>
-                </PostBox>
-                <PostBox>
-                    <h2 className="text-2xl">Post 3</h2>
-                    <hr className="my-2" />
-                    <p>This is the body of the post 3</p>
-                </PostBox>
-            </section>
+            <section>{articlesList}</section>
             <AppSideMenu />
         </main>
     );

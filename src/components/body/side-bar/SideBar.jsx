@@ -1,14 +1,8 @@
 import TagButton from "./TagButton";
 
 export default function SideBar() {
-    return (
-        <aside>
-            <TagButton />
-            <TagButton />
-            <TagButton />
-            <TagButton />
-            <TagButton />
-            <TagButton />
-        </aside>
-    );
+    const tags = ["html", "css", "js"];
+
+    const tagList = tags.map((el, i) => <TagButton key={i} tagName={el} />);
+    return <aside>{tagList}</aside>;
 }
