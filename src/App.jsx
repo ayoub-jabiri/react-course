@@ -2,7 +2,8 @@ import "./assets/css/main.css";
 // import AppHeader from "./components/layout/AppHeader";
 // import MainSection from "./components/body/MainSection";
 // import TheButton from "./components/TheButton";
-import TheInput from "./components/TheInput";
+// import TheInput from "./components/TheInput";
+import TheForm from "./components/TheForm";
 
 function App() {
     return (
@@ -10,7 +11,8 @@ function App() {
             {/* <AppHeader />
             <MainSection /> */}
             {/* <TheButton /> */}
-            <TheInput />
+            {/* <TheInput /> */}
+            <TheForm />
         </>
     );
 }
