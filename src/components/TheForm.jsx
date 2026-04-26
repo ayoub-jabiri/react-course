@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 export default function TheForm() {
-    const [formInputs, setFormInputs] = useState({ name: "", email: "" });
+    const [formInputs, setFormInputs] = useState({
+        name: "",
+        email: "",
+        isStudent: false,
+        info: "",
+    });
     return (
         <form
             className="w-fit p-4"
@@ -31,6 +36,28 @@ export default function TheForm() {
                     setFormInputs({ ...formInputs, email: e.target.value });
                 }}
             />
+            <hr className="my-2" />
+            <label>Are you student:</label>
+            <input
+                type="checkbox"
+                id="test"
+                checked={formInputs.isStudent}
+                onChange={(e) => {
+                    setFormInputs({
+                        ...formInputs,
+                        isStudent: e.target.checked,
+                    });
+                }}
+            />
+            <hr className="my-2" />
+            <label className="block">Info:</label>
+            <textarea
+                className="block mt-2 p-2 bg-gray-300 border"
+                value={formInputs.info}
+                onChange={(e) => {
+                    setFormInputs({ ...formInputs, info: e.target.value });
+                }}
+            ></textarea>
             <hr className="my-2" />
             <button className="bg-green-500 text-white px-4 py-2 border rounded-sm cursor-pointer">
                 Submit
