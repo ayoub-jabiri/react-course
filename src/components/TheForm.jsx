@@ -5,6 +5,8 @@ export default function TheForm() {
         name: "",
         email: "",
         isStudent: false,
+        country: "",
+        status: "",
         info: "",
     });
     return (
@@ -49,6 +51,51 @@ export default function TheForm() {
                     });
                 }}
             />
+            <hr className="my-2" />
+            <select
+                className="border"
+                value={formInputs.country}
+                onChange={(e) => {
+                    setFormInputs({
+                        ...formInputs,
+                        country: e.target.value,
+                    });
+                }}
+            >
+                <option value="">-</option>
+                <option>Country 1</option>
+                <option>Country 2</option>
+                <option>Country 3</option>
+            </select>
+            <hr className="my-2" />
+            <div>
+                <input
+                    type="radio"
+                    name="status"
+                    value="student"
+                    checked={formInputs.status == "student"}
+                    onChange={(e) => {
+                        setFormInputs({
+                            ...formInputs,
+                            status: e.target.value,
+                        });
+                    }}
+                />
+                <label>Student</label>
+                <input
+                    type="radio"
+                    name="status"
+                    value="teacher"
+                    checked={formInputs.status == "teacher"}
+                    onChange={(e) => {
+                        setFormInputs({
+                            ...formInputs,
+                            status: e.target.value,
+                        });
+                    }}
+                />
+                <label>Teacher</label>
+            </div>
             <hr className="my-2" />
             <label className="block">Info:</label>
             <textarea
