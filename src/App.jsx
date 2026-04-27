@@ -3,16 +3,13 @@ import "./assets/css/main.css";
 // import MainSection from "./components/body/MainSection";
 // import TheButton from "./components/TheButton";
 // import TheInput from "./components/TheInput";
-import TheForm from "./components/TheForm";
+// import TheForm from "./components/TheForm";
+import TheArray from "./components/TheArray";
 
 function App() {
     return (
         <>
-            {/* <AppHeader />
-            <MainSection /> */}
-            {/* <TheButton /> */}
-            {/* <TheInput /> */}
-            <TheForm />
+            <TheArray />
         </>
     );
 }
