@@ -22,6 +22,14 @@ export default function TheArray() {
             >
                 Delete
             </button>
+            <button
+                className="bg-green-500 text-white text-xs rounded-md p-1 cursor-pointer"
+                onClick={() => {
+                    handleUpdate(device.id);
+                }}
+            >
+                Update
+            </button>
         </i>
     ));
 
@@ -31,6 +39,18 @@ export default function TheArray() {
         // newDevices.splice(index, 1);
 
         const newDevices = devices.filter((device) => device.id != id);
+        setDevices([...newDevices]);
+    }
+
+    function handleUpdate(id) {
+        const newDevices = devices.map((device) => {
+            if (device.id == id) {
+                device.title += "ssss";
+            }
+
+            return device;
+        });
+
         setDevices([...newDevices]);
     }
 
