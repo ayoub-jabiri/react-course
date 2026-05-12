@@ -1,15 +1,25 @@
+import { useState } from "react";
 import "./assets/css/main.css";
-// import AppHeader from "./components/layout/AppHeader";
-// import MainSection from "./components/body/MainSection";
-// import TheButton from "./components/TheButton";
-// import TheInput from "./components/TheInput";
-// import TheForm from "./components/TheForm";
-import TheArray from "./components/TheArray";
 
 function App() {
+    const [count, setCount] = useState(1);
+
+    function handlePlusClick() {
+        setCount((c) => {
+            return c + 1;
+        });
+        setCount((c) => {
+            return c + 1;
+        });
+    }
     return (
         <>
-            <TheArray />
+            <div className="container">
+                <h1>The count is: {count}</h1>
+                <button onClick={handlePlusClick} className="border px-2">
+                    +
+                </button>
+            </div>
         </>
     );
 }
