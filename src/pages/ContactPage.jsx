@@ -1,7 +1,0 @@
-export default function ContactPage() {
-    return (
-        <section>
-            <h1>This is the contact page</h1>
-        </section>
-    );
-}

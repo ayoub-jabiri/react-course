@@ -1,24 +1,27 @@
 import { useState } from "react";
 import "./assets/css/main.css";
+import TestComponent from "./components/TestComponent";
+import { TestContext } from "./contexts/TestContext";
 
 function App() {
-    const [count, setCount] = useState(1);
+    console.log("render");
+    const [title, setTitle] = useState("Hello World");
 
-    function handlePlusClick() {
-        setCount((c) => {
-            return c + 1;
-        });
-        setCount((c) => {
-            return c + 1;
-        });
+    function handleTitleChange() {
+        setTitle("New Title");
     }
     return (
         <>
             <div className="container">
-                <h1>The count is: {count}</h1>
-                <button onClick={handlePlusClick} className="border px-2">
-                    +
-                </button>
+                <TestContext.Provider
+                    value={{
+                        testTitle: title,
+                        id: 5,
+                        handleTitleChange: handleTitleChange,
+                    }}
+                >
+                    <TestComponent />
+                </TestContext.Provider>
             </div>
         </>
     );
